@@ -11,6 +11,11 @@ class EditBarangKeluar extends EditRecord
 {
     protected static string $resource = BarangKeluarResource::class;
 
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
     protected $oldJumlah;
 
     protected function fillForm(): void
