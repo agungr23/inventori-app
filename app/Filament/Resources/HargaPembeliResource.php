@@ -40,7 +40,7 @@ class HargaPembeliResource extends Resource
                         })
                         ->required(),
                     Forms\Components\TextInput::make('harga_jual')
-                        ->label('Harga Jual')
+                        ->label('Harga Satuan')
                         ->mask(RawJs::make('$money($input)'))
                         ->stripCharacters(',')
                         ->numeric()
@@ -66,7 +66,7 @@ class HargaPembeliResource extends Resource
                     ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('harga_jual')
-                    ->label('Harga Jual')
+                    ->label('Harga Satuan')
                     ->formatStateUsing(fn($state) => 'Rp ' . number_format($state, 0, ',', '.'))
                     ->sortable(),
                 Tables\Columns\TextColumn::make('pembeli.nama')
